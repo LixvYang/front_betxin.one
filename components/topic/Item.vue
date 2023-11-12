@@ -40,7 +40,7 @@ onMounted(() => {
                 </span>
 
                 <span class="relative left-1">
-                    <Icon name="material-symbols:star-rounded" color="black" size="1.5rem"/>
+                    <Icon name="material-symbols:kid-star-sharp" color="yellow" size="1.5rem"/>
                 </span>
                 
             </div>

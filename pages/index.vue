@@ -1,10 +1,7 @@
-<script>
-</script>
-
 <template>
     <div id="index">
         <div id="search-form " class="bg-gray-50 dark:bg-gray-700">
-            <form id="form">
+            <!-- <form id="form">
                 <label for="default-search"
                     class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                 <div class="md:hidden relative">
@@ -21,14 +18,14 @@
                     <button type="submit"
                         class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                 </div>
-            </form>
+            </form> -->
+
+            <!-- <TabsList class="mx-auto max-w-[460px] lg:px-2.5 px-0" /> -->
+            <TabsSearch class="mx-auto max-w-[460px] lg:px-2.5 px-0" />
 
 
             <TopicList id="topic-list" class="flex flex-col justify-between mx-auto max-w-[1140px] lg:px-2.5 px-0" />
-            <!-- 
-        <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-    <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 45%"> 45%</div>
-  </div> -->
+
         </div>
     </div>
 </template>
