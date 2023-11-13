@@ -9,5 +9,7 @@ export default defineNuxtConfig({
     vueI18n: './locales/nuxt-i18n.ts'
   },
   devtools: { enabled: true },
-  build: { transpile: ['vuetify'] }
+  build: { 
+    transpile: ['vuetify'], 
+  }
 });

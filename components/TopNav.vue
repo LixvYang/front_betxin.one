@@ -1,6 +1,8 @@
 <script setup>
 import { initFlowbite } from 'flowbite'
 
+var show = ref(false)
+
 onMounted(() => {
     initFlowbite();
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -52,7 +54,11 @@ onMounted(() => {
     });
 })
 
-const show = ref(true)
+onMounted(() => {  
+    if (window.innerWidth > 768) {
+        show.value =true
+    }
+})
 </script>
 
 <template>
