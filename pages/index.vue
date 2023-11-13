@@ -1,6 +1,14 @@
+<script setup>
+import { initFlowbite } from 'flowbite'
+
+onMounted(() => {
+    initFlowbite();
+})
+</script>
+
 <template>
     <div id="index">
-        <div id="search-form " class="bg-gray-50 dark:bg-gray-700">
+        <div id="search-form" class="flex flex-col justify-between mx-auto max-w-md lg:px-2.5 px-0 bg-gray-50 dark:bg-gray-700">
             <!-- <form id="form">
                 <label for="default-search"
                     class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -21,10 +29,10 @@
             </form> -->
 
             <!-- <TabsList class="mx-auto max-w-[460px] lg:px-2.5 px-0" /> -->
-            <TabsSearch class="mx-auto max-w-[460px] lg:px-2.5 px-0" />
+            <TabsSearch class="md:hidden relative lg:px-2.5 px-2" />
 
 
-            <TopicList id="topic-list" class="flex flex-col justify-between mx-auto max-w-[1140px] lg:px-2.5 px-0" />
+            <TopicList id="topic-list" />
 
         </div>
     </div>

@@ -60,7 +60,7 @@ onMounted(() => {
 
     <footer>
         <div
-            class="md:hidden fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-0 left-1/2 dark:bg-gray-700 dark:border-gray-600">
+            class="md:hidden fixed  z-50 w-full h-16 max-w-md -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-0 left-1/2 dark:bg-gray-700 dark:border-gray-600">
             <div class="grid h-full max-w-lg grid-cols-3 mx-auto">
                 <div class="flex items-center justify-center">
                     <button data-tooltip-target="tooltip-home" type="button"
@@ -101,12 +101,7 @@ onMounted(() => {
                     <button id="dropdownTopButton" data-dropdown-toggle="dropdownTop" data-dropdown-placement="top"
                         type="button"
                         class="inline-flex items-center justify-center w-10 h-10 font-medium rounded-full  group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
-                        <!-- <svg class="w-4 h-4 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
-                        </svg> -->
-                    <Icon name="material-symbols:person-rounded" color="black" size="1.5rem"/>
+                    <Icon name="material-symbols:person-rounded" color="gray" size="1.5rem"/>
                         <span class="sr-only">Profile</span>
                     </button>
                 </div>

@@ -1,7 +1,6 @@
 <script setup>
 import { initFlowbite } from 'flowbite'
 
-
 onMounted(() => {
     initFlowbite();
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -52,6 +51,8 @@ onMounted(() => {
         }
     });
 })
+
+const show = ref(true)
 </script>
 
 <template>
@@ -66,7 +67,7 @@ onMounted(() => {
                 </div>
 
 
-                <form class="hidden md:block w-1/2">
+                <!-- <form class="hidden md:block w-1/2">
                     <label for="default-search"
                         class=" mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative ">
@@ -83,7 +84,9 @@ onMounted(() => {
                         <button type="submit"
                             class="text-white absolute end-2.5 bottom-1 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                     </div>
-                </form>
+                </form> -->
+                <TabsSearch v-if="show" class="hidden md:block w-1/2 lg:px-2.5 px-2" />
+                
                 <button type="button"
                     class="hidden md:block text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Connect</button>
 

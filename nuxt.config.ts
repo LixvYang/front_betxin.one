@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
   ],
   i18n: {
-    vueI18n: './nuxt-i18n.ts'
+    vueI18n: './locales/nuxt-i18n.ts'
   },
   devtools: { enabled: true },
+  build: { transpile: ['vuetify'] }
 });

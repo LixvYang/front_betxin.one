@@ -1,5 +1,5 @@
-import en from '../locales/en.json'
-import cn from '../locales/cn.json'
+import en from './en.json'
+import cn from './cn.json'
 
 export default {
   legacy: false,

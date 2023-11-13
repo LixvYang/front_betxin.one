@@ -1,3 +1,12 @@
+<script setup>
+import { initFlowbite } from 'flowbite'
+
+onMounted(() => {
+    initFlowbite();
+})
+</script>
+
+
 <template>
     <div id="tabs-search">
         <!-- 
@@ -20,7 +29,7 @@
                     </div>
                 </form> -->
 
-        <form class="md:hidden relative">
+        <form>
             <div class="flex">
                 <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your
                     Email</label>

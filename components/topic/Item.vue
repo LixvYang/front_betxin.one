@@ -8,7 +8,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div id="topic-item" class="flex flex-col flex-wrap justify-start align-center">
+    <div id="topic-item" class="max-w-md flex flex-col flex-wrap justify-start align-center">
         <div class="flex flex-row shrink">
             <div class="shrink">
                 <img class="object-cover p-3 w-32 rounded-3xl"
@@ -29,20 +29,20 @@ onMounted(() => {
             </div>
         </div>
 
-        <div id="amount" class="relative p-1 left-3 flex flex-row place-content-between">
-            <div class="text-gray-700 dark:text-white">
+        <div id="amount" class="relative p-1 flex flex-row place-content-between">
+            <div class="relative left-10 text-gray-700 dark:text-white ">
                 Bet $200
             </div>
 
             <div class="relative right-10 text-gray-700 dark:text-white">
-                <span  class="relative right-1">
+                <span class="relative right-1">
                     <Icon name="iconamoon:comment-dots-thin" color="black" size="1.5rem" />
                 </span>
 
                 <span class="relative left-1">
-                    <Icon name="material-symbols:kid-star-sharp" color="yellow" size="1.5rem"/>
+                    <Icon name="material-symbols:kid-star-sharp" color="yellow" size="1.5rem" />
                 </span>
-                
+
             </div>
         </div>
 
