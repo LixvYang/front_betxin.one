@@ -1,5 +1,3 @@
 <template>
-    <div id="user">
-        qwewq
-    </div>
+  <div id="user">qwewq</div>
 </template>

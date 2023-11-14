@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 .theme-light {
-    --background: #7cb284;
-    --text: #313131;  
+  --background: #7cb284;
+  --text: #313131;
 }
-  
-  
+
 .theme-dark {
   --background: #313131;
   --text: #f8f8f8;
