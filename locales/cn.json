@@ -1,3 +1,12 @@
 {
-  "welcome": "你好"
+  "code": "cn",
+  "name": "中文(简体)",
+  "welcome": "你好",
+  "Business": "商业",
+  "Crypto": "加密",
+  "Sports": "运动",
+  "Games": "游戏",
+  "News": "新闻",
+  "Treeding": "热门",
+  "Others": "其他"
 }

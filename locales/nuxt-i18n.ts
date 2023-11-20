@@ -3,7 +3,7 @@ import cn from "./cn.json";
 
 export default {
   legacy: false,
-  locale: "en",
+  locale: "cn",
   defaultLocale: "cn",
   messages: {
     cn,

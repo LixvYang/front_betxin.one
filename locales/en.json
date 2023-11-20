@@ -1,3 +1,12 @@
 {
-  "welcome": "Welcom"
+  "code": "cn",
+  "name": "English(US)",
+  "welcome": "Welcom",
+  "Business": "Business",
+  "Crypto": "Crypto",
+  "Sports": "Sports",
+  "Games": "Games",
+  "News": "News",
+  "Treeding": "Treeding",
+  "Others": "Others"
 }

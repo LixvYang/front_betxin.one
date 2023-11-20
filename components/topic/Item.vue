@@ -22,7 +22,7 @@ onMounted(() => {
       <div class="flex flex-col p-2 gap-1 shrink">
         <p class="mb-2 font-bold text-gray-700 dark:text-white">价格</p>
         <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">
-          比特币会在2025年1月1日涨到25000美元吗？
+          比特币会在2025年1月1日涨到100k美元吗？
         </p>
       </div>
     </div>
