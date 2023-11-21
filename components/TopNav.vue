@@ -79,7 +79,6 @@ function handleLanguageDropdownBtn(locate) {
   setLocale(locate.info)
   languageDropdown.hide()
 }
-
 </script>
 
 <template>

@@ -43,11 +43,6 @@ onMounted(() => {
     override: true,
   };
 
-  /*
-   * tabElements: array of tab objects
-   * options: optional
-   * instanceOptions: optional
-   */
   const tabs = new Tabs(tabsElement, tabElements, options, instanceOptions);
 
   // shows another tab element

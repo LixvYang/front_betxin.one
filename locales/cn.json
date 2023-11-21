@@ -1,6 +1,7 @@
 {
   "code": "cn",
   "name": "中文(简体)",
+  "othername": "en",
   "welcome": "你好",
   "Business": "商业",
   "Crypto": "加密",
