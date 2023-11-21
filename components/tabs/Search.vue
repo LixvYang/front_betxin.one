@@ -1,5 +1,6 @@
 <script setup>
 import { Dropdown } from 'flowbite'
+const { t } = useI18n()
 
 let dropdown;
 onMounted(() => {
@@ -11,7 +12,7 @@ onMounted(() => {
 const categoryStore = useCategoryStore()
 
 function handleDropdownBtn(category) {
-  categoryStore.changeCurrentCategory(category)
+  categoryStore.changeCurrentCategory(category.name)
   dropdown.hide()
 }
 </script>
@@ -21,9 +22,9 @@ function handleDropdownBtn(category) {
     <form>
       <div class="flex">
         <button id="category-dropdown-button" data-dropdown-toggle="category-dropdown-menu"
-          class="justify-between flex-shrink-0 md:w-24 z-10 inline-flex items-center py-2.5 px-2 text-sm text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+          class="w-24 justify-between flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
           type="button">
-          {{ categoryStore.currentCategory }}
+         {{ t(categoryStore.currentCategory) }}
           <svg class="relative right-1 w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 10 6">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -38,7 +39,7 @@ function handleDropdownBtn(category) {
               <button type="button"
                 class="inline-flex w-full  px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 @click="handleDropdownBtn(category)">
-                {{ category.name}}
+                {{ t(category.name) }}
               </button>
             </li>
           </ul>

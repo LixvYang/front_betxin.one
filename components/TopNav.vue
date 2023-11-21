@@ -1,6 +1,6 @@
 <script setup>
-import { initFlowbite } from "flowbite";
-const { setLocale } = useI18n()
+import { initFlowbite } from "flowbite"
+const i18nStore = usei18nStore()
 const show = ref(false);
 let languageDropdown;
 
@@ -12,78 +12,22 @@ onMounted(() => {
 
 onMounted(() => {
   initFlowbite();
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-  if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-
-  const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-  const themeToggleLightIcon = document.getElementById(
-    "theme-toggle-light-icon",
-  );
-
-  // Change the icons inside the button based on previous settings
-  if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    themeToggleLightIcon.classList.remove("hidden");
-  } else {
-    themeToggleDarkIcon.classList.remove("hidden");
-  }
-
-  const themeToggleBtn = document.getElementById("theme-toggle");
-
-  themeToggleBtn.addEventListener("click", function () {
-    // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle("hidden");
-    themeToggleLightIcon.classList.toggle("hidden");
-
-    // if set via local storage previously
-    if (localStorage.getItem("color-theme")) {
-      if (localStorage.getItem("color-theme") === "light") {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("color-theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("color-theme", "light");
-      }
-
-      // if NOT set via local storage previously
-    } else if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-    }
-  });
-
+  handleSwitchModeBtn('theme-toggle-dark-icon', 'theme-toggle-light-icon', 'theme-toggle')
 
   const languageDropwownMenu = document.getElementById('language-dropdown-menu');
   const languageDropwownBtn = document.getElementById('language-dropdown-switch');
   languageDropdown = new Dropdown(languageDropwownMenu, languageDropwownBtn);
 });
 
-const i18nStore = usei18nStore()
-
 function handleLanguageDropdownBtn(locate) {
-  i18nStore.changeLocale(locate)
-  setLocale(locate.info)
+  handleLanguageBtn(locate)
   languageDropdown.hide()
 }
 </script>
 
 <template>
   <div id="top-nav">
-    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-700">
+    <nav class="bg-gray-100 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-700">
       <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <div class="flex items-center">
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">

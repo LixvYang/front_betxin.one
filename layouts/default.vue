@@ -1,71 +1,10 @@
 <script setup>
 import { initFlowbite } from "flowbite";
-const { t, setLocale } = useI18n()
-
-const i18nStore = usei18nStore()
-
-function handleLanguageDropdownBtn(locate) {
-  i18nStore.changeLocale(locate)
-  setLocale(locate.info)
-}
+const { t } = useI18n()
 
 onMounted(() => {
   initFlowbite();
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-  if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-
-  const themeToggleDarkIcon = document.getElementById(
-    "theme-toggle-dark-icon1",
-  );
-  const themeToggleLightIcon = document.getElementById(
-    "theme-toggle-light-icon1",
-  );
-
-  // Change the icons inside the button based on previous settings
-  if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    themeToggleLightIcon.classList.remove("hidden");
-  } else {
-    themeToggleDarkIcon.classList.remove("hidden");
-  }
-
-  const themeToggleBtn = document.getElementById("theme-toggle1");
-
-  themeToggleBtn.addEventListener("click", function () {
-    // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle("hidden");
-    themeToggleLightIcon.classList.toggle("hidden");
-
-    // if set via local storage previously
-    if (localStorage.getItem("color-theme")) {
-      if (localStorage.getItem("color-theme") === "light") {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("color-theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("color-theme", "light");
-      }
-
-      // if NOT set via local storage previously
-    } else if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-    }
-  });
+  handleSwitchModeBtn('theme-toggle-dark-icon1', 'theme-toggle-light-icon1', 'theme-toggle1')
 });
 </script>
 
@@ -125,29 +64,29 @@ onMounted(() => {
           <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <div id="dropdownTop"
-          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-gray-700">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRightButton">
+          class="w-1/4 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-gray-700">
+          <ul class="w-full  py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRightButton">
             <li>
               <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">个人主页</a>
             </li>
             <li>
               <button id="theme-toggle1" type="button"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                class="w-full block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                 <span id="theme-toggle-dark-icon1" class="hidden w-5 h-5" fill="currentColor">深色模式</span>
                 <span id="theme-toggle-light-icon1" class="hidden w-5 h-5" fill="currentColor">浅色模式</span>
               </button>
             </li>
             <li>
-              <button id="language-toggle" type="button" @click="handleLanguageDropdownBtn({id: 0 ,name: t('othername'), info: t('othername') })"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ t('name') }}
+              <button id="language-toggle" type="button" @click="handleLanguageBtn({id: 0 ,name: t('othername'), info: t('othername') })"
+                class="w-full block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ t('name') }}
               </button>
             </li>
             <li>
               <a href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                class="w-full block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
             </li>
             <li>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+              <a href="#" class="w-full block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
                 out</a>
             </li>
           </ul>

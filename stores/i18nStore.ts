@@ -2,10 +2,10 @@ import { defineStore } from 'pinia'
 
 export const usei18nStore = defineStore('i18nStore', {
   state: () => ({
-    currentLacale: {id: 0 ,name: '中文(简体)' },
+    currentLacale: {id: 0 ,name: '中文(简体)', info: 'cn' },
     localeList: ref([
-      {id: 0 ,name: '中文(简体)' },
-      {id: 1, name: 'English(Us)' },
+      {id: 0 ,name: '中文(简体)', info: 'cn' },
+      {id: 1, name: 'English(Us)', info: 'en' },
     ]) as Ref<Locale[]>
   }),
   actions: {
@@ -18,4 +18,5 @@ export const usei18nStore = defineStore('i18nStore', {
 interface Locale {
   id: number
   name: string
+  info: string
 }
