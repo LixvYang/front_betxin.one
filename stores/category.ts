@@ -1,34 +1,32 @@
+import { defineStore } from "pinia";
 
-import { defineStore } from 'pinia'
-
-export const useCategoryStore = defineStore('category', () => {
- 
-  const currentCategory = ref('Business');
+export const useCategoryStore = defineStore("category", () => {
+  const currentCategory = ref({ id: 1, name: "Business" });
 
   const categoryList = computed(() => {
     return [
-    { id: 1, name: 'Business' },
-    { id: 2, name: 'Crypto' },
-    { id: 3, name: 'Sports' },
-    { id: 4, name: 'Games' },
-    { id: 5, name: 'News' },
-    { id: 6, name: 'Treeding' },
-    { id: 7, name: 'Others' },
-  ]
-  })
+      { id: 1, name: "Business" },
+      { id: 2, name: "Crypto" },
+      { id: 3, name: "Sports" },
+      { id: 4, name: "Games" },
+      { id: 5, name: "News" },
+      { id: 6, name: "Trending" },
+      { id: 7, name: "Others" },
+    ] as Category[];
+  });
 
-  function changeCurrentCategory(categoryName: string) {
-    currentCategory.value = categoryName
+  function changeCurrentCategory(category: Category) {
+    currentCategory.value = category;
   }
 
   return {
     currentCategory,
     categoryList,
-    changeCurrentCategory
-  }
-})
+    changeCurrentCategory,
+  };
+});
 
 interface Category {
-    id: number
-    name: string
+  id: number;
+  name: string;
 }

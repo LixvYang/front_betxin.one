@@ -64,7 +64,7 @@ onMounted(() => {
           <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <div id="dropdownTop"
-          class="w-1/4 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-gray-700">
+          class="w-1/3 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-gray-700">
           <ul class="w-full  py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRightButton">
             <li>
               <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">个人主页</a>

@@ -12,9 +12,10 @@ onMounted(() => {
 const categoryStore = useCategoryStore()
 
 function handleDropdownBtn(category) {
-  categoryStore.changeCurrentCategory(category.name)
+  categoryStore.changeCurrentCategory(category)
   dropdown.hide()
 }
+
 </script>
 
 <template>
@@ -24,7 +25,7 @@ function handleDropdownBtn(category) {
         <button id="category-dropdown-button" data-dropdown-toggle="category-dropdown-menu"
           class="w-24 justify-between flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
           type="button">
-         {{ t(categoryStore.currentCategory) }}
+         {{ t(categoryStore.currentCategory.name) }}
           <svg class="relative right-1 w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 10 6">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

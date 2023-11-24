@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "nuxt-icon",
     "@nuxtjs/i18n",
-    "@pinia/nuxt",
+    "@pinia/nuxt"
   ],
   i18n: {
     vueI18n: "./locales/nuxt-i18n.ts",

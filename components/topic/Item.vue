@@ -1,16 +1,15 @@
-<script setup>
-import { initFlowbite } from "flowbite";
-
-onMounted(() => {
-  initFlowbite();
-});
+<script setup lang="ts">
+defineProps<{
+  item: Topic
+}>()
 </script>
 
 <template>
   <div
     id="topic-item"
-    class="max-w-md flex flex-col flex-wrap justify-start align-center"
+    class="flex flex-col flex-wrap justify-start align-center"
   >
+    {{ item.tid }}
     <div class="flex flex-row shrink">
       <div class="shrink">
         <img

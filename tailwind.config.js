@@ -73,7 +73,9 @@ export default {
       colors: {
         themeBackground: "var(--background)",
         themeText: "var(--text)",
+        cool: "red"
       },
+      
     },
   },
   variants: {

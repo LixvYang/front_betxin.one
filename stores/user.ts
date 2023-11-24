@@ -1,14 +1,16 @@
 // stores/user.ts
 import { defineStore } from 'pinia'
 
-export const useUserInfoStore = defineStore('counter', {
-  state: (): IUserInfoState => {
+export const useUserStore = defineStore('counter', {
+  state: () => {
     return {
-        userInfo: {},
+        user: {
+          uid: 1
+        } as UserInfo
     }
   },
   getters: {
-    getUserInfo: (state) => state.userInfo
+    getUserInfo: (state) => state.user
   },
   actions: {
     increntment() {
@@ -16,10 +18,6 @@ export const useUserInfoStore = defineStore('counter', {
   }
 })
 
-interface IUserInfoState {
-    userInfo?: UserInfoState
-}
-
-interface UserInfoState {
-  uid?: string
+interface UserInfo {
+  uid: number
 }

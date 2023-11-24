@@ -1,42 +1,38 @@
-// import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
+import { useCategoryStore } from "./category";
 
-// /*
-//   1. 获取id
-//   2. 根据id拿到话题列表
-//   3. 
-// */
-// export const useTopicListStore = defineStore('topic', {
-//   state: () => ({
-//     buisinessList: [] as TopicList[],
-//     buisinessToken: '',
-//     cryptoList: [] as TopicList[],
-//     cryptoToken: '',
-//     sportsList: [] as TopicList[],
-//     sportsToken: '',
-//     gamesList: [] as TopicList[],
-//     gamesToken: '',
-//     newsList: [] as TopicList[],
-//     newsToken: '',
-//     trendingList: [] as TopicList[],
-//     trendingToken: '',
-//     othersList: [] as TopicList[],
-//     othersToken: '',
-//   }),
-//   getters: {
-//     getCount: (state) => {
-//       return (cid: String): TopicList[] => {
-//         return state.buisinessList
-//       }
-//     },
-//   },
-//   actions: {
-//     increntment() {
-//         // this.count++
-//     }
-//   }
-// })
+export const useTopicListStore = defineStore("topic", {
+  state: () => ({
+    BusinessList: [] as TopicList[],
+    BusinessToken: "",
+    CryptoList: [] as TopicList[],
+    CryptoToken: "",
+    SportsList: [] as TopicList[],
+    SportsToken: "",
+    GamesList: [] as TopicList[],
+    GamesToken: "",
+    NewsList: [] as TopicList[],
+    NewsToken: "",
+    TrendingList: [] as TopicList[],
+    TrendingToken: "",
+    OthersList: [] as TopicList[],
+    OthersToken: "",
+  }),
+  getters: {
+    getTopicList: (state): TopicList[] => {
+        const categoryStore = useCategoryStore()
+        state.BusinessList = [{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213}]
+        return (state as any)[`${categoryStore.currentCategory.name}List`]
+    },
+  },
+  actions: {
+    appendTopicList() {
+        const caustegoryStore = useCategoryStore()
 
-// interface TopicList {
-//   name: string
-//   age: number
-// }
+    }
+  }
+});
+
+interface TopicList {
+  tid: number;
+}
