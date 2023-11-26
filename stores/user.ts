@@ -1,23 +1,33 @@
 // stores/user.ts
 import { defineStore } from 'pinia'
 
-export const useUserStore = defineStore('counter', {
+export const useUserStore = defineStore('user', {
   state: () => {
     return {
+      token: '',
         user: {
-          uid: 1
-        } as UserInfo
+        } as User
     }
   },
   getters: {
     getUserInfo: (state) => state.user
   },
   actions: {
-    increntment() {
+    changeToken(token: string) {
+      this.token = token
+    },
+    changeUser(user: User) {
+      this.user = user
     }
   }
 })
 
-interface UserInfo {
-  uid: number
+export interface User {
+  uid?: string
+  full_name?: string
+  avatar_url?: string
+  identity_number?: string
+  biography?: string
+  client_id?: string
+  is_mvm_user?: boolean
 }

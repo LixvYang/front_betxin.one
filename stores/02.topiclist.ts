@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { useCategoryStore } from "./category";
+import { useCategoryStore } from "./01.category";
 
 export const useTopicListStore = defineStore("topic", {
   state: () => ({
@@ -20,17 +20,26 @@ export const useTopicListStore = defineStore("topic", {
   }),
   getters: {
     getTopicList: (state): TopicList[] => {
-        const categoryStore = useCategoryStore()
-        state.BusinessList = [{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213},{tid: 213}]
-        return (state as any)[`${categoryStore.currentCategory.name}List`]
+      const categoryStore = useCategoryStore()
+      state.BusinessList = [
+        { tid: 213 },
+        { tid: 213 },
+        { tid: 213 },
+        { tid: 213 },
+        { tid: 213 },
+        { tid: 213 },
+        { tid: 213 },
+        { tid: 213 },
+      ];
+      return (state as any)[`${categoryStore.currentCategory.name}List`]
     },
   },
   actions: {
-    appendTopicList() {
-        const caustegoryStore = useCategoryStore()
-
-    }
-  }
+    async appendTopicList(topicList: TopicList[]) {
+      const categoryStore = useCategoryStore() as any
+      (this as any)[`${categoryStore.currentCategory.name}List`].push(...topicList);
+    },
+  },
 });
 
 interface TopicList {

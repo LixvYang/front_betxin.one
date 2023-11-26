@@ -1,6 +1,7 @@
 <script setup>
 import { initFlowbite } from "flowbite";
 const { t } = useI18n()
+const userStore = useUserStore()
 
 onMounted(() => {
   initFlowbite();
@@ -9,9 +10,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <TopNav />
   <slot role="main" />
-
+  
   <footer>
     <div
       class="md:hidden fixed z-50 w-full h-16 max-w-md -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-0 left-1/2 dark:bg-gray-700 dark:border-gray-600">
@@ -28,7 +28,8 @@ onMounted(() => {
             <span class="sr-only">Home</span>
           </button>
           <div id="tooltip-home" role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            >
             Home
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
@@ -67,7 +68,9 @@ onMounted(() => {
           class="w-1/3 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-gray-700">
           <ul class="w-full  py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRightButton">
             <li>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">个人主页</a>
+              <NuxtLink :to="`/user/${userStore.getUserInfo.uid}`">
+                <button href="#" class="w-full block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">个人主页</button>
+              </NuxtLink>
             </li>
             <li>
               <button id="theme-toggle1" type="button"

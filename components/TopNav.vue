@@ -32,12 +32,18 @@ function handleLanguageDropdownBtn(locate) {
   handleLanguageBtn(locate);
   languageDropdown.hide();
 }
+
+// const topicListStore = useTopicListStore()
+
+// setInterval(() => {
+//   topicListStore.appendTopicList([{ tid: 213 }])
+// }, 2000);
 </script>
 
 <template>
   <div id="top-nav">
     <nav
-      class="bg-gray-100 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-700"
+      class="fixed w-full z-20 bg-gray-100 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-700"
     >
       <div
         class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
@@ -56,13 +62,14 @@ function handleLanguageDropdownBtn(locate) {
           </a>
         </div>
 
-        <TabsSearch v-if="show" class="hidden md:block w-1/2 lg:px-2.5 px-2" />
+        <TabsSearch v-if="show" class="hidden md:block w-1/2 lg:px-2.5" />
 
         <div id="top-nav-btns" class="relative left-1 flex flex-start">
           <button
             type="button"
             class="hidden md:block relative right-2 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-          >
+            @click="handleMixinAuth()"
+            >
             Connect
           </button>
 

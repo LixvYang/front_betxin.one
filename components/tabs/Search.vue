@@ -15,13 +15,11 @@ function handleDropdownBtn(category) {
   categoryStore.changeCurrentCategory(category)
   dropdown.hide()
 }
-
 </script>
 
 <template>
   <div id="tabs-search">
-    <form>
-      <div class="flex">
+      <div class="flex w-full">
         <button id="category-dropdown-button" data-dropdown-toggle="category-dropdown-menu"
           class="w-24 justify-between flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
           type="button">
@@ -59,6 +57,5 @@ function handleDropdownBtn(category) {
           </button>
         </div>
       </div>
-    </form>
   </div>
 </template>

@@ -4,7 +4,7 @@
 //  基于useFetch()的网络请求封装
 
 //全局基础URL
-const BASEURL: string = "http://127.0.0.1:9091";  //全局后台服务器请求地址
+const BASEURL: string = "http://localhost:9091"  //全局后台服务器请求地址
 
 //定义ts变量类型接口
 interface HttpParms {
@@ -13,12 +13,13 @@ interface HttpParms {
     method?: any,   //请求方法
     query?: any,       //添加查询搜索参数到URL
     body?: any         //请求体
+    header?: any
 }
 
-interface BetxinResp {
+interface BetxinResp<T = any> {
     message: string 
     code: number
-    data: any
+    data?: T
 }
 
 /**
@@ -26,14 +27,15 @@ interface BetxinResp {
  * @param obj 请求参数
  * @returns 响应结果
  */
-export const http = (obj: HttpParms) => {
-    const res = new Promise<BetxinResp>((resolve, reject) => {
+export const http = <T = any>(obj: HttpParms): Promise<BetxinResp<T>> => {
+    const res = new Promise<BetxinResp<T>>((resolve, reject) => {
         useFetch(
             (obj.baseURL ?? BASEURL) + obj.url,
             {
                 method: obj.method ?? "GET",
                 query: obj?.query ?? null,
                 body: obj?.body ?? null,
+                headers: obj?.header ?? null,
                 onRequest({ request, options }) {
                     // 设置请求报头
                     options.headers = options.headers || {}

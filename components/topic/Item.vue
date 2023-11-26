@@ -9,7 +9,6 @@ defineProps<{
     id="topic-item"
     class="flex flex-col flex-wrap justify-start align-center"
   >
-    {{ item.tid }}
     <div class="flex flex-row shrink">
       <div class="shrink">
         <img
@@ -55,5 +54,8 @@ defineProps<{
         </span>
       </div>
     </div>
+
+      <hr class="h-px lg:ml-2 mt-2 bg-gray-500 border-0 dark:bg-gray-400" />
+
   </div>
 </template>

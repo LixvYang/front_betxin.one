@@ -3,6 +3,11 @@ import { defineStore } from "pinia";
 export const useCategoryStore = defineStore("category", () => {
   const currentCategory = ref({ id: 1, name: "Business" });
 
+  // const topicListStore = useTopicListStore()
+//  setTimeout(() => {
+//    topicListStore.appendTopicList([{ tid: 213 }])
+//  }, 3000);
+
   const categoryList = computed(() => {
     return [
       { id: 1, name: "Business" },
