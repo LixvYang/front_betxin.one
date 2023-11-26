@@ -1,13 +1,13 @@
 <script setup>
-import { onMounted } from "vue";
-import { initFlowbite } from "flowbite";
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
 onMounted(() => {
-  initFlowbite();
-});
+    initFlowbite()
+})
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+    <NuxtLayout>
+        <NuxtPage />
+    </NuxtLayout>
 </template>

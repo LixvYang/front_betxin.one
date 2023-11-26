@@ -12,8 +12,8 @@ export default {
     methods: {
         goBack() {
             this.$router.push('/')
-        }
-    }
+        },
+    },
 }
 </script>
 

@@ -1,11 +1,11 @@
 <script setup>
-import MainLayout from '~/layouts/MainLayout.vue';
+import MainLayout from '~/layouts/MainLayout.vue'
 
-const route = useRoute()
+GetTopicListByCid({ cid: 1 })
 </script>
 
 <template>
-  <MainLayout>
-      <TopicList id="topic-list" />
-  </MainLayout>
+    <MainLayout>
+        <TopicList id="topic-list" />
+    </MainLayout>
 </template>
