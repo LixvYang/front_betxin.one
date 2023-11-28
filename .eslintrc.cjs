@@ -28,6 +28,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 0,
         'no-use-before-define': ['error', { variables: false }],
         camelcase: 'off',
+        'vue/no-deprecated-slot-attribute': 'off',
     },
     overrides: [
         {

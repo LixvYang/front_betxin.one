@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-
 interface Category {
     id: number
     name: string

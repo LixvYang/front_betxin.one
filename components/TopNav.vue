@@ -32,12 +32,6 @@ function handleLanguageDropdownBtn(locate) {
     handleLanguageBtn(locate)
     languageDropdown.hide()
 }
-
-// const topicListStore = useTopicListStore()
-
-// setInterval(() => {
-//   topicListStore.appendTopicList([{ tid: 213 }])
-// }, 2000);
 </script>
 
 <template>
@@ -48,9 +42,9 @@ function handleLanguageDropdownBtn(locate) {
             <div
                 class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
             >
-                <div class="flex items-center">
-                    <a
-                        href="/"
+                <div class="flex items-center relative">
+                    <NuxtLink
+                        to="/"
                         class="flex items-center space-x-3 rtl:space-x-reverse"
                     >
                         <img
@@ -62,7 +56,7 @@ function handleLanguageDropdownBtn(locate) {
                             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
                             >Betxin</span
                         >
-                    </a>
+                    </NuxtLink>
                 </div>
 
                 <TabsSearch

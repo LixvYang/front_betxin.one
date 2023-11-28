@@ -20,27 +20,24 @@ export const useTopicListStore = defineStore('topic', {
         OthersToken: '',
     }),
     getters: {
-        getTopicList: (state): Topic[] => {
+        getCurrentTopicList: (state) => {
             const categoryStore = useCategoryStore()
-            state.BusinessList = [
-                { tid: 213 },
-                { tid: 213 },
-                { tid: 213 },
-                { tid: 213 },
-                { tid: 213 },
-                { tid: 213 },
-                { tid: 213 },
-                { tid: 213 },
-            ]
             return (state as any)[`${categoryStore.currentCategory.name}List`]
+        },
+        getCurrentTopicToken: (state) => {
+            const categoryStore = useCategoryStore()
+            return (state as any)[`${categoryStore.currentCategory.name}Token`]
+        },
+        getPageToken: (state) => {
+            return (name: string) => (state as any)[`${name}Token`]
         },
     },
     actions: {
-        appendTopicList(topicList: Topic[]) {
-            const categoryStore = useCategoryStore() as any
-            ;(this as any)[`${categoryStore.currentCategory.name}List`].push(
-                ...topicList
-            )
+        appendTopicList(name: string, topicList: Topic[]) {
+            ;(this as any)[`${name}List`].push(...topicList)
+        },
+        changeTopicPageToken(name: string, token: string) {
+            ;(this as any)[`${name}Token`] = token
         },
     },
 })

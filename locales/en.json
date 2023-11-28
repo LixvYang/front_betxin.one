@@ -12,5 +12,7 @@
     "Others": "Others",
     "home": "For You",
     "collect": "Collect",
-    "deadline": "Deadline"
+    "deadline": "Deadline",
+    "topicEnd": "END",
+    "almostover": "Almost over"
 }

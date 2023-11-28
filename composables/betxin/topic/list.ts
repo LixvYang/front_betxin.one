@@ -1,10 +1,10 @@
 export interface TopicListReq {
-    cid: number
-    page_token: string
+    cid?: number
+    page_token?: string
 }
 
 export interface Topic {
-    tid: number
+    tid: string
     cid?: number
     title?: string
     intro?: string
@@ -16,11 +16,11 @@ export interface Topic {
     total_count?: string
     collect_count?: number
     read_count?: number
-    img_url?: boolean
+    img_url?: string
     is_stop?: boolean
     is_deleted?: number
     refund_end_time?: number
-    end_time?: string
+    end_time?: number
     is_collect?: boolean
 }
 
@@ -36,6 +36,9 @@ export const GetTopicListByCid = async (
         const res = await http<TopicListResp>({
             method: 'GET',
             url: `/api/v1/topics/${req.cid}`,
+            query: {
+                page_token: req.page_token,
+            },
             header: {
                 'Content-Type': 'application/json',
             },
@@ -44,13 +47,31 @@ export const GetTopicListByCid = async (
         if (res.code !== 200) {
             throw new Error('连接失败')
         }
-
-        console.log(res.data?.pre_page_token)
-        console.log(res.data?.list)
-
         return res.data!
     } catch (error) {
         console.error(error)
         throw error
     }
+}
+
+export const LoadMoreTopicList = () => {
+    const topicListStore = useTopicListStore()
+    const categoryStore = useCategoryStore()
+
+    GetTopicListByCid({
+        cid: categoryStore.currentCategory.id,
+        page_token: topicListStore.getPageToken(
+            categoryStore.currentCategory.name
+        ),
+    }).then((data) => {
+        console.log(data)
+        topicListStore.appendTopicList(
+            categoryStore.currentCategory.name,
+            data.list
+        )
+        topicListStore.changeTopicPageToken(
+            categoryStore.currentCategory.name,
+            data.pre_page_token
+        )
+    })
 }

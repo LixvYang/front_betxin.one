@@ -1,3 +1,7 @@
+<script setup>
+onMounted(() => {})
+</script>
+
 <template>
     <div
         class="fixed w-full h-full px-0 overflow-auto bg-gray-100 dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"

@@ -1,7 +1,5 @@
 <script setup>
 import MainLayout from '~/layouts/MainLayout.vue'
-
-GetTopicListByCid({ cid: 1 })
 </script>
 
 <template>

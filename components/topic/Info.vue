@@ -1,10 +1,39 @@
 <script setup lang="ts">
+import { GetTopicByTid } from '~/composables/betxin/topic/get'
+
 const userStore = useUserStore()
+const topicStore = useTopicStore()
+
+const props = defineProps<{
+    tid: string
+}>()
+
+GetTopicByTid(props.tid).then((topic) => {
+    topicStore.changeCurrentTopic(topic)
+})
 </script>
 
 <template>
-    <div id="user-info">
+    <div id="topic-info">
         <div
+            id="user-banner"
+            class="left-20 flex flex-col justify-between mx-auto max-w-xl lg:px-2.5 px-0 bg-gray-100 dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
+        >
+            <TopicItem
+                class="rounded-xl shadow-md overflow-hidden m-5"
+                :item="topicStore.currentTopic"
+            />
+
+            <div
+                class="p-5 rounded-xl shadow-md overflow-hidden m-5 bg-gray-100 dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700"
+            >
+                <span class="text-gray-900 dark:text-gray-400 text-sm"
+                    >这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰这是一个内饰</span
+                >
+            </div>
+        </div>
+
+        <!-- <div
             id="user-banner"
             class="left-20 flex flex-col justify-between mx-auto max-w-xl lg:px-2.5 px-0 bg-gray-100 dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
         >
@@ -107,6 +136,6 @@ const userStore = useUserStore()
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>

@@ -36,8 +36,8 @@ export const Connect = async (req: ConnectReq): Promise<string> => {
         },
     })
 
-    console.log(ress)
     console.log(ress.data)
+
     userStore.changeUser(ress.data ?? {})
 
     return ''
