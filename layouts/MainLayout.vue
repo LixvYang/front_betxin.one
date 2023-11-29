@@ -1,5 +1,7 @@
 <script setup>
 onMounted(() => {})
+const router = useRouter()
+console.log()
 
 const props = defineProps({
     isShowTabSearch: Boolean,
@@ -14,6 +16,7 @@ const props = defineProps({
         <div class="max-w-[1140px] mx-auto relative md:top-16 top-[52px]">
             <div id="search-form">
                 <TabsSearch
+                    v-if="!router.currentRoute.value.fullPath.includes('user')"
                     id="tabs-search"
                     class="flex flex-col justify-between mx-auto max-w-xl md:hidden relative lg:px-2.5 px-0 bg-gray-50 dark:bg-gray-700"
                 />

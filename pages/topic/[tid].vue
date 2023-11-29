@@ -6,6 +6,7 @@ import { GetTopicByTid } from '~/composables/betxin/topic/get'
 definePageMeta({})
 const { t } = useI18n()
 const route = useRoute()
+const userStore = useUserStore()
 const topicStore = useTopicStore()
 const item = ref<Topic>({
     tid: '0',
@@ -23,6 +24,10 @@ const getDate = (timestamp: number): string => {
 }
 
 const handleBuyBtnClick = () => {
+    if (!userStore.user.uid) {
+        handleMixinAuth()
+    }
+
     const nuxtApp = useNuxtApp()
     const passport = usePassport(nuxtApp.vueApp)
 
