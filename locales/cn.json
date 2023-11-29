@@ -10,9 +10,15 @@
     "News": "新闻",
     "Trending": "热门",
     "Others": "其他",
-    "home": "个人主页",
+    "home": "主页",
     "collect": "收藏",
     "deadline": "即将结束",
     "topicEnd": "已经没有话题了~",
-    "almostover": "即将结束"
+    "almostover": "即将结束",
+    "profile": "个人资料",
+    "stoped": "已停止",
+    "endTime": "结束时间",
+    "stopRefundTime": "退款截止时间",
+    "Buy": "购买",
+    "Refund": "退款"
 }

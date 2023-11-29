@@ -8,8 +8,11 @@ const { t } = useI18n()
 const loading = ref(false)
 
 const infiniteHandler = ($state: any) => {
-    console.log(topicListStore.getCurrentTopicList.length)
-
+    if (!topicListStore.getCurrentTopicList) {
+        loading.value = true
+        $state.loaded()
+        return
+    }
     if (topicListStore.getCurrentTopicList.length % 10 !== 0) {
         loading.value = false
         $state.complete()
@@ -75,10 +78,6 @@ const infiniteHandler = ($state: any) => {
                 @infinite="infiniteHandler"
             >
                 <template #complete>
-                    <!-- <span
-                        class="bg-gray-200 items-center flex justify-center text-cool dark:bg-gray-900"
-                        >dsad</span
-                    > -->
                     <span
                         class="bg-gray-200 items-center flex justify-center font-normal text-gray-700 dark:text-white dark:bg-gray-900"
                         >{{ t('topicEnd') }}</span

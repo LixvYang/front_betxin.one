@@ -18,7 +18,7 @@ export interface Topic {
     read_count?: number
     img_url?: string
     is_stop?: boolean
-    is_deleted?: number
+    is_deleted?: boolean
     refund_end_time?: number
     end_time?: number
     is_collect?: boolean

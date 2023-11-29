@@ -16,7 +16,7 @@ export const handleMixinAuth = async () => {
         origin: 'Betxin',
         authMethods: ['metamask', 'walletconnect', 'mixin', 'fennec', 'onekey'],
         clientId: '30aad5a5-e5f3-4824-9409-c2ff4152724e',
-        scope: 'PROFILE:READ',
+        scope: 'PROFILE:READ ASSETS:READ SNAPSHOTS:READ',
         pkce: true,
         signMessage: true,
         hooks: {
@@ -46,6 +46,15 @@ export const handleMixinAuth = async () => {
                 console.log('Disconnect')
             },
         },
+    })
+    const authData = await passport.sync({
+        token,
+        channel,
+    })
+    console.log(authData.channel)
+    console.log(authData.token)
+    passport.getAssets().then((data) => {
+        console.log(data)
     })
     if (!isMvm.value) {
         // store.dispatch('user/handleUserLogin', {

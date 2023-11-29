@@ -1,6 +1,7 @@
 <script setup>
 import { Dropdown } from 'flowbite'
 const { t } = useI18n()
+const router = useRouter()
 
 let dropdown
 onMounted(() => {
@@ -18,6 +19,7 @@ const categoryStore = useCategoryStore()
 function handleDropdownBtn(category) {
     categoryStore.changeCurrentCategory(category)
     dropdown.hide()
+    router.push('/')
 }
 </script>
 

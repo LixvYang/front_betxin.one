@@ -14,5 +14,11 @@
     "collect": "Collect",
     "deadline": "Deadline",
     "topicEnd": "END",
-    "almostover": "Almost over"
+    "almostover": "Almost over",
+    "profile": "Profile",
+    "stoped": "stoped",
+    "endTime": "Stop Time",
+    "stopRefundTime": "Stop Refund Time",
+    "Buy": "BUY",
+    "Refund": "REFUND"
 }

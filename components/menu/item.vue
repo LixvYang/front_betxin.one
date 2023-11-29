@@ -24,7 +24,8 @@ const icon = ref('')
 
 if (iconString.value === 'home') icon.value = 'mdi:home'
 if (iconString.value === 'Following') icon.value = 'ci:group'
-if (iconString.value === 'LIVE') icon.value = 'ri:live-line'
+if (iconString.value === 'profile')
+    icon.value = 'material-symbols:person-outline-rounded'
 if (iconString.value === 'collect')
     icon.value = 'fluent-emoji-high-contrast:smiling-face-with-heart-eyes'
 if (iconString.value === 'deadline') icon.value = 'heroicons-outline:clock'

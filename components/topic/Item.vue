@@ -7,9 +7,14 @@ const topicStore = useTopicStore()
 const props = defineProps<{
     item: Topic
 }>()
-const showOver = ref(false)
+
+const showAlmostOver = ref(false)
+const showStop = ref(props.item.is_stop)
 onMounted(() => {
-    showOver.value =
+    if (showStop.value === true) {
+        return false
+    }
+    showAlmostOver.value =
         Math.floor(
             ((props.item.refund_end_time ?? 0) - Date.now()) /
                 (1000 * 60 * 60 * 24)
@@ -77,7 +82,17 @@ onMounted(() => {
             <div
                 class="flex flex-row relative right-5 text-gray-700 dark:text-white"
             >
-                <div v-if="showOver" class="flex flex-row relative right-2">
+                <div v-if="showStop" class="flex flex-row relative right-2">
+                    <span
+                        class="bg-red-100 dark:bg-red-900 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:text-red-400"
+                    >
+                        {{ t('stoped') }}
+                    </span>
+                </div>
+                <div
+                    v-if="showAlmostOver"
+                    class="flex flex-row relative right-2"
+                >
                     <span
                         class="bg-purple-400 dark:bg-purple-900 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:text-purple-400"
                     >
@@ -100,13 +115,14 @@ onMounted(() => {
                         size="1.5rem"
                     />
                     <span
-                        class="text-base font-normal text-gray-900 dark:text-gray-400"
+                        class="text-sm font-normal text-gray-900 dark:text-gray-400"
                     >
                         {{ item.read_count }}
                     </span>
                 </div>
             </div>
         </div>
+        <slot name="content"></slot>
 
         <!-- <hr class="h-px lg:ml-2 mt-2 bg-gray-500 border-0 dark:bg-gray-400" /> -->
     </div>

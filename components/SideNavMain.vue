@@ -1,5 +1,13 @@
 <script setup>
 const user = useUserStore()
+
+const handleProfileClick = () => {
+    if (!user.user.uid) {
+        handleMixinAuth()
+        return
+    }
+    pushTo(`/user/${user.user.uid}`)
+}
 </script>
 
 <template>
@@ -8,15 +16,22 @@ const user = useUserStore()
         class="hidden md:block lg:w-[220px] w-[75px] fixed z-0 top-16 bg-gray-100 h-full overflow-auto dark:bg-gray-800"
     >
         <div class="lg:w-full w-[55px] mx-auto">
-            <NuxtLink :to="`/user/${user.getUserInfo.uid}`">
+            <NuxtLink to="/">
                 <MenuItem
                     icon-string="home"
                     color-string="#6C89D3"
                     size-string="30"
                 />
             </NuxtLink>
-            <!-- <MenuItem iconString="Following" colorString="#5979F0" sizeString="27" />
-      <MenuItem iconString="LIVE" colorString="#6AB48F" sizeString="27" /> -->
+            <!-- <NuxtLink :to="`/user/${user.getUserInfo.uid}`"> -->
+            <div @click="handleProfileClick">
+                <MenuItem
+                    icon-string="profile"
+                    color-string="#6AB48F"
+                    size-string="27"
+                />
+            </div>
+            <!-- </NuxtLink> -->
             <MenuItem
                 icon-string="collect"
                 color-string="#AA66C3"

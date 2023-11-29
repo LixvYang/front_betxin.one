@@ -1,5 +1,9 @@
 <script setup>
 onMounted(() => {})
+
+const props = defineProps({
+    isShowTabSearch: Boolean,
+})
 </script>
 
 <template>

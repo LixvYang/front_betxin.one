@@ -1,12 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    // ssr: false,
+    ssr: false,
     app: {
         head: {
             script: [
-                // {
-                //     src: 'https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js',
-                // },
+                {
+                    src: 'https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js',
+                },
                 {
                     src: 'https://cdn.jsdelivr.net/npm/@foxone/mvm@0.1.37/dist/mvm.min.js',
                 },
@@ -35,6 +35,6 @@ export default defineNuxtConfig({
     plugins: ['~/plugins/01.mixin', { src: '~/plugins/02.scroll', ssr: false }],
     devtools: { enabled: true },
     build: {
-        transpile: ['vuetify'],
+        transpile: ['vuetify', 'foxone'],
     },
 })

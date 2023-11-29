@@ -26,6 +26,7 @@ onMounted(() => {
                         data-tooltip-target="tooltip-home"
                         type="button"
                         class="inline-flex items-center justify-center w-10 h-10 font-medium rounded-full group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+                        @click="pushTo('/')"
                     >
                         <svg
                             class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
