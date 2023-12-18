@@ -122,8 +122,11 @@ onMounted(() => {
                 </div>
             </div>
         </div>
-        <slot name="content"></slot>
+        <slot name="content"> </slot>
 
+        <!-- <div>
+            <div id="talkee-comments" class="bg-black"></div>
+        </div> -->
         <!-- <hr class="h-px lg:ml-2 mt-2 bg-gray-500 border-0 dark:bg-gray-400" /> -->
     </div>
 </template>

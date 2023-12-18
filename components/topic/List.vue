@@ -43,19 +43,6 @@ const infiniteHandler = ($state: any) => {
         }
     })
 }
-// onMounted(() => {
-//     ;(window as any).Talkee.show({
-//         apiBase: 'https://talkee-api.pando.im/api',
-//         slug: window.location.pathname,
-//         siteId: '36',
-//         locale: 'en',
-//         showLink: true,
-//         container: '#talkee-comments',
-//         auth: {
-//             authMethods: ['metamask', 'walletconnect', 'mixin', 'fennec'],
-//         },
-//     })
-// })
 </script>
 
 <template>
@@ -63,9 +50,6 @@ const infiniteHandler = ($state: any) => {
         id="topic-list"
         class="left-24 top-16 pb-16 flex flex-col justify-between mx-auto max-w-xl px-0 bg-gray-200 dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700 border-x-4 border-gray-300 border-solid border-r border-l dark:border-gray-500"
     >
-        <!-- <div>
-            <div id="talkee-comments"></div>
-        </div> -->
         <div id="topic" class="overflow-y-scroll">
             <TopicItem
                 v-for="topic in topicListStore.getCurrentTopicList"
@@ -92,3 +76,9 @@ const infiniteHandler = ($state: any) => {
         <!-- </template> -->
     </div>
 </template>
+
+<style>
+/* .talkee {
+    background-color: red;
+} */
+</style>

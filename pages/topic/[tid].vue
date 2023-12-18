@@ -46,6 +46,20 @@ const handleBuyBtnClick = () => {
         console.log(res)
     }, 3000)
 }
+
+onMounted(() => {
+    ;(window as any).Talkee.show({
+        apiBase: 'http://127.0.0.1:4444/api',
+        slug: window.location.pathname,
+        siteId: '36',
+        locale: 'en',
+        showLink: true,
+        container: '#talkee-comments',
+        auth: {
+            authMethods: ['metamask', 'walletconnect', 'mixin', 'fennec'],
+        },
+    })
+})
 </script>
 
 <template>
@@ -110,6 +124,10 @@ const handleBuyBtnClick = () => {
                                 {{ t('endTime') }}:
                                 {{ getDate(item.end_time!) }}
                             </div>
+                        </div>
+
+                        <div>
+                            <div id="talkee-comments" class="bg-black"></div>
                         </div>
                     </template>
                 </TopicItem>

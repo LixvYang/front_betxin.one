@@ -10,15 +10,15 @@ export default defineNuxtConfig({
                 {
                     src: 'https://cdn.jsdelivr.net/npm/@foxone/mvm@0.1.37/dist/mvm.min.js',
                 },
-                // {
-                //     src: 'https://cdn.jsdelivr.net/npm/@foxone/talkee@3.0.1/dist/index.umd.js',
-                // },
+                {
+                    src: 'https://cdn.jsdelivr.net/npm/@foxone/talkee@3.0.1/dist/index.umd.js',
+                },
             ],
             link: [
-                // {
-                //     rel: 'stylesheet',
-                //     href: 'https://cdn.jsdelivr.net/npm/@foxone/talkee@3.0.1/dist/style.css',
-                // },
+                {
+                    rel: 'stylesheet',
+                    href: 'https://cdn.jsdelivr.net/npm/@foxone/talkee@3.0.1/dist/style.css',
+                },
             ],
         },
     },
