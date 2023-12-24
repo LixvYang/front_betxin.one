@@ -7,6 +7,7 @@ export default {
         './plugins/**/*.{js,ts}',
         './nuxt.config.{js,ts}',
         './node_modules/flowbite/**/*.{js,ts}',
+        './**/*.vue',
     ],
     theme: {
         colors: {
@@ -25,7 +26,6 @@ export default {
             },
         },
         fontFamily: {
-            sans: ['Graphik', 'sans-serif'],
             serif: ['Merriweather', 'serif'],
             body: [
                 'Inter',
@@ -45,6 +45,8 @@ export default {
                 'Noto Color Emoji',
             ],
             sans: [
+                'Graphik',
+                'sans-serif',
                 'Inter',
                 'ui-sans-serif',
                 'system-ui',
@@ -74,6 +76,26 @@ export default {
                 themeBackground: 'var(--background)',
                 themeText: 'var(--text)',
                 cool: 'red',
+            },
+            keyframes: {
+                overlayShow: {
+                    from: { opacity: 0 },
+                    to: { opacity: 1 },
+                },
+                contentShow: {
+                    from: {
+                        opacity: 0,
+                        transform: 'translate(-50%, -48%) scale(0.96)',
+                    },
+                    to: {
+                        opacity: 1,
+                        transform: 'translate(-50%, -50%) scale(1)',
+                    },
+                },
+            },
+            animation: {
+                overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+                contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
             },
         },
     },

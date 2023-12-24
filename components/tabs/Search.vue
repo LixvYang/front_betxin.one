@@ -1,29 +1,29 @@
 <script setup>
-import { Dropdown } from 'flowbite'
-const { t } = useI18n()
-const router = useRouter()
+// import { Dropdown } from 'flowbite'
+// const { t } = useI18n()
+// const router = useRouter()
 
-let dropdown
-onMounted(() => {
-    const categoryDropdownMenu = document.getElementById(
-        'category-dropdown-menu'
-    )
-    const categoryDropdownBtn = document.getElementById(
-        'category-dropdown-button'
-    )
-    dropdown = new Dropdown(categoryDropdownMenu, categoryDropdownBtn)
-})
+// let dropdown
+// onMounted(() => {
+//     const categoryDropdownMenu = document.getElementById(
+//         'category-dropdown-menu'
+//     )
+//     const categoryDropdownBtn = document.getElementById(
+//         'category-dropdown-button'
+//     )
+//     dropdown = new Dropdown(categoryDropdownMenu, categoryDropdownBtn)
+// })
 
-const categoryStore = useCategoryStore()
+// const categoryStore = useCategoryStore()
 
-function handleDropdownBtn(category) {
-    categoryStore.changeCurrentCategory(category)
-    dropdown.hide()
-    router.push('/')
-}
+// function handleDropdownBtn(category) {
+//     categoryStore.changeCurrentCategory(category)
+//     dropdown.hide()
+//     router.push('/')
+// }
 </script>
 
-<template>
+<!-- <template>
     <div id="tabs-search">
         <div class="flex w-full">
             <button
@@ -100,4 +100,4 @@ function handleDropdownBtn(category) {
             </div>
         </div>
     </div>
-</template>
+</template> -->

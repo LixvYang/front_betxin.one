@@ -2,14 +2,7 @@
 import { initFlowbite } from 'flowbite'
 
 const i18nStore = usei18nStore()
-const show = ref(false)
 let languageDropdown
-
-onMounted(() => {
-    if (window.innerWidth > 768) {
-        show.value = true
-    }
-})
 
 onMounted(() => {
     initFlowbite()
@@ -37,7 +30,7 @@ function handleLanguageDropdownBtn(locate) {
 <template>
     <div id="top-nav">
         <nav
-            class="fixed w-full z-20 bg-gray-100 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-700"
+            class="fixed w-full z-20 bg-gray-100 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800"
         >
             <div
                 class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
@@ -47,22 +40,18 @@ function handleLanguageDropdownBtn(locate) {
                         to="/"
                         class="flex items-center space-x-3 rtl:space-x-reverse"
                     >
-                        <img
-                            src="https://flowbite.com/docs/images/logo.svg"
-                            class="h-8"
+                        <NuxtImg
+                            class="w-10 h-10 rounded-full"
+                            src="/favicon.jpg"
                             alt="Flowbite Logo"
                         />
+
                         <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-                            >Betxin</span
-                        >
+                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white underline underline-offset-3 decoration-4 decoration-purple-400 dark:decoration-purple-600"
+                            >Kalos
+                        </span>
                     </NuxtLink>
                 </div>
-
-                <TabsSearch
-                    v-if="show"
-                    class="hidden md:block w-1/2 lg:px-2.5"
-                />
 
                 <div id="top-nav-btns" class="relative left-1 flex flex-start">
                     <button
@@ -186,7 +175,7 @@ function handleLanguageDropdownBtn(locate) {
                         </button>
                         <div
                             id="language-dropdown-menu"
-                            class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
+                            class="z-30 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
                         >
                             <ul class="py-2 font-medium" role="none">
                                 <li>

@@ -4,6 +4,6 @@ import MainLayout from '~/layouts/MainLayout.vue'
 
 <template>
     <MainLayout>
-        <TopicList id="topic-list" />
+        <Home id="home" />
     </MainLayout>
 </template>
